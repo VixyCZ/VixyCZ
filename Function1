@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.Sockets;
+using System.Reflection.Metadata;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Function1;
+
+
+public class FuncApp
+{
+    public void Run()
+    {
+        var result = tricislsy(5, 80, 5);
+        Console.WriteLine(result);
+
+
+
+    }
+
+    public int SafelyConvertToInt(string x)
+    {
+        if (int.TryParse(x, out int result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public int plus(int a, int b)
+    {
+        return a + b;
+    }
+    public int minus(int a, int b)
+    {
+        return a - b;
+    }
+    public int deleno(int a, int b)
+    {
+        return a / b;
+    }
+    public int krat(int a, int b)
+    {
+        return a * b;
+    }
+
+    public int TotalGoals(int LaLiga, int ChampionsLeague, int CopaDelRey)
+    {
+        int TotalGoals = LaLiga + ChampionsLeague + CopaDelRey;
+        return TotalGoals;
+    }
+
+    //Udělejte funkci, která má dva parametry. A vypisuje do console sekvenci čísel, mezi dvěma čísly v otevřeném intervalu zprava.
+    public int mezi(int a, int b)
+    {
+        
+        for (int i = a; i <= b; i++)
+        {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("-------------------------");
+        return a + b;
+    }
+
+    //Udělejte funkci, která přijímá dvě čísla.Funkce vrací součet všech celých čísel mezi danými čísly, rozsah je otevřený interval zrpava.
+    public int plusminus(int a, int b)
+    {
+        int r = a;
+        for (int i = a; i <= b; i++)
+        {
+            Console.WriteLine(i);
+            r = r + i;
+        }
+        Console.WriteLine("---------");
+        return r;
+    }
+
+    //Udělte funkci, která přijímá tři parametry a vypisuje do console sekvenci čísel mezi prvními dvěma čísly s krokem jako třetí číslo. (5,20,5) vypisuje 5, 10, 15 pod sebe.
+    public int tricisla(int a, int b, int c)
+    {
+        int r = 1;
+        int s = 0;
+        for (int i = a; i <= b; r++)
+        {
+            s = a * r;
+            
+            Console.WriteLine(s);
+            i = i + c;
+        }
+        Console.WriteLine("Zopakovalo se to:");
+        return r;
+    }
+
+    //Udělejte funkci ze zadání čtyři.Funkce tentokrát nebude vypisovat do console ale vrací počet čísel, která se vygenerovala.
+
+    public int tricislsy(int a, int b, int c) 
+    {
+        int r = 1;
+        int s = 0;
+        for (int i = a; i <= b; r++)
+        {
+            s = a * r;
+            i = i + c;
+        }
+        return r;
+    }
+
+
+
+
+
+
+}
